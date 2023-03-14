@@ -25,7 +25,6 @@ Route::prefix('account/')->group(function () {
 Route::prefix('user/')->group(function () {
     Route::group(['middleware' => ['authJWT']], function () {
         Route::GET('me',        [AuthController::class, 'me']);
-        Route::GET('index',     [UserController::class, 'index']);
         Route::GET('show',      [UserController::class, 'show']);
         Route::PUT('update',    [UserController::class, 'update']);
         Route::POST('addbook',  [UserController::class, 'addbook']);
@@ -35,6 +34,7 @@ Route::prefix('user/')->group(function () {
 
 Route::prefix('books/')->group(function () {
     Route::group(['middleware' => ['authAdmJWT']], function () {
+        Route::GET('user/index',     [UserController::class, 'index']);
         Route::GET('index',     [BookController::class, 'index']);
         Route::GET('show',      [BookController::class, 'show']);
         Route::POST('store',    [BookController::class, 'store']);

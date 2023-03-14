@@ -133,4 +133,9 @@ class ConstantMessage
      * @var string USER_NOT_PERMISSION
      */
     const USER_NOT_PERMISSION = 'Token without authorization.';
+
+    /**
+     * @var string AUTHORIZATION_NOT_FOUND
+     */
+    const AUTHORIZATION_NOT_FOUND = 'Authorization Token not found.';
 }

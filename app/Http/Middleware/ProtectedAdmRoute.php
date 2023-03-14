@@ -27,7 +27,6 @@ class ProtectedAdmRoute
             $this->me();
             JWTAuth::parseToken()->authenticate();
         } catch (\Exception $e) {
-
             if ($e instanceof TokenInvalidException || $e instanceof TokenExpiredException) {
                 return response()->json(['status' => 'Token is Expired']);
             }
@@ -39,6 +38,11 @@ class ProtectedAdmRoute
     public function me()
     {
         $auth = response()->json(auth('api')->user());
+        if(!isset($auth->original->permission_id))
+        {
+            throw new Exception(ConstantMessage::AUTHORIZATION_NOT_FOUND, 401);
+        }
+
         if ($auth->original->permission_id == 2) {
             throw new Exception(ConstantMessage::USER_NOT_PERMISSION, 401);
         }
