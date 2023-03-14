@@ -60,7 +60,7 @@ Rode os seguintes comandos antes da excecução de qualquer rota.<br>
 <strong>php artisan migrate:fresh --seed</strong>
 </p>
 
-Em seguida roda o seguinte comando para inicicar o sevidor do Laravel para executarmos as rotas.
+Em seguida rode o seguinte comando para inicicar o sevidor do Laravel para executarmos as rotas.
 <br>
 <strong>php artisan server</strong>
 </p>
@@ -70,7 +70,7 @@ Em seguida roda o seguinte comando para inicicar o sevidor do Laravel para execu
 
 <br>
 
-<h3> Cadastrar User e Login <h3>
+<h3> Cadastrar um User<h3>
     * Rota: http://127.0.0.1:8000/api/account/store {POST}
     <br>
     * payload:  
