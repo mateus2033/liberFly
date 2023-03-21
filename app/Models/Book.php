@@ -5,6 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @OA\Schema(
+ *     title="Book",
+ *     description="Book model",
+ *     @OA\Xml(
+ *         name="Book"
+ *     )
+ * )
+ */
 class Book extends Model
 {
     use HasFactory;
